@@ -1,6 +1,6 @@
-import { useEffect, useState, lazy, Suspense } from 'react';
+import { Fragment, useEffect, useState, lazy, Suspense } from 'react';
 import {
-    HashRouter as Router, Switch, Route, Link
+    BrowserRouter as Router, Switch, Route, Link
 } from 'react-router-dom';
 
 const Topics = lazy(() => import('./Topics'));
@@ -15,49 +15,48 @@ export function App(props: AppProps): JSX.Element {
     }, [])
 
     return (
-    <div>
-      <h1>Hello, React Hooks!</h1>
-      <p>{props.message}</p>
-      <p>{`${time.toLocaleDateString()} ${time.toLocaleTimeString()}`}</p>
-      <hr />
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/users">Users</Link>
-              </li>
-              <li>
-                <Link to="/topics">Topics</Link>
-              </li>
-            </ul>
-          </nav>
-          <Suspense fallback={<div>Loading ...</div>}>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
-            <Route path="/topics">
-              <Topics />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-          </Suspense>
-
-        </div>
-      </Router>
-    </div>
+      <Fragment>
+        <h1>Hello, React Hooks!</h1>
+        <p>{props.message}</p>
+        <p>{`${time.toLocaleDateString()} ${time.toLocaleTimeString()}`}</p>
+        <hr />
+        <Router>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/users">Users</Link>
+                </li>
+                <li>
+                  <Link to="/topics">Topics</Link>
+                </li>
+              </ul>
+            </nav>
+            <Suspense fallback={<div>Loading ...</div>}>
+              <Switch>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/users">
+                  <Users />
+                </Route>
+                <Route path="/topics">
+                  <Topics />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </Suspense>
+          </div>
+        </Router>
+      </Fragment>
     );
 }
 
