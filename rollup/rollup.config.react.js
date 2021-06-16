@@ -25,7 +25,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/scheduler.development.js'
+      file: 'dist/libs/react/scheduler.js'
     },
     external: [],
     plugins: [
@@ -45,7 +45,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/scheduler.production.min.js'
+      file: 'dist/libs/react/scheduler.min.js'
     },
     external: [],
     plugins: [
@@ -65,7 +65,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/scheduler-tracing.development.js'
+      file: 'dist/libs/react/scheduler-tracing.js'
     },
     external: [],
     plugins: [
@@ -85,7 +85,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/scheduler-tracing.production.min.js'
+      file: 'dist/libs/react/scheduler-tracing.min.js'
     },
     external: [],
     plugins: [
@@ -105,7 +105,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/react.development.js'
+      file: 'dist/libs/react/react.js'
     },
     external: ['object-assign'],
     plugins: [
@@ -125,7 +125,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/react.production.min.js'
+      file: 'dist/libs/react/react.min.js'
     },
     external: ['object-assign'],
     plugins: [
@@ -145,7 +145,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/react-jsx-runtime.development.js'
+      file: 'dist/libs/react/react-jsx-runtime.js'
     },
     external: ['react', 'object-assign'],
     plugins: [
@@ -165,7 +165,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/react-jsx-runtime.production.min.js'
+      file: 'dist/libs/react/react-jsx-runtime.min.js'
     },
     external: ['react', 'object-assign'],
     plugins: [
@@ -185,7 +185,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/react-dom.development.js'
+      file: 'dist/libs/react/react-dom.js'
     },
     external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
     plugins: [
@@ -205,7 +205,7 @@ export default [
       format: 'esm',
       exports: 'named',
       sourcemap: false,
-      file: 'dist/libs/react/react-dom.production.min.js'
+      file: 'dist/libs/react/react-dom.min.js'
     },
     external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
     plugins: [
@@ -219,4 +219,45 @@ export default [
       })
     ]
   },
+  {
+    input: './rollup/react-router-dom.js',
+    output: {
+      format: 'esm',
+      exports: 'named',
+      sourcemap: false,
+      file: 'dist/libs/react/react-router-dom.js'
+    },
+    external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
+    plugins: [
+      nodeResolve(),
+      commonjs(),
+      replace({
+        preventAssignment: true,
+        values: {
+          "process.env.NODE_ENV": '"development"'
+        }
+      })
+    ]
+  },
+  {
+    input: './rollup/react-router-dom.js',
+    output: {
+      format: 'esm',
+      exports: 'named',
+      sourcemap: false,
+      file: 'dist/libs/react/react-router-dom.min.js'
+    },
+    external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
+    plugins: [
+      nodeResolve(),
+      commonjs(),
+      replace({
+        preventAssignment: true,
+        values: {
+          "process.env.NODE_ENV": '"development"'
+        }
+      }),
+      terser({ format: { comments: false } })
+    ]
+  }
 ]
