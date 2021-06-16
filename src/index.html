@@ -8,7 +8,13 @@
   <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-  <h1>Hello, Rollup!</h1>
-  <script type="module" src="./main.js"></script>
+  <div id="app"></div>
+  <script src="./index.js"></script>
+  <script>
+  loadScripts([
+    { type: 'importmap', src: `./importmap.${isProd()?'prod.json':'json'}` },
+    { type: 'module', src: `./main.js` }
+  ]).catch(ex => console.error(ex));
+  </script>
 </body>
 </html>

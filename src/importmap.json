@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "object-assign": "./libs/react/object-assign.js",
+    "scheduler": "./libs/react/scheduler.development.js",
+    "scheduler/tracing": "./libs/react/scheduler-tracing.development.js",
+    "react": "./libs/react/react.development.js",
+    "react/jsx-runtime": "./libs/react/react-jsx-runtime.development.js",
+    "react-dom": "./libs/react/react-dom.development.js"
+  }
+}

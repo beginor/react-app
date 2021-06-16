@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "object-assign": "./libs/react/object-assign.js",
+    "scheduler": "./libs/react/scheduler.production.min.js",
+    "scheduler/tracing": "./libs/react/scheduler-tracing.production.min.js",
+    "react": "./libs/react/react.production.min.js",
+    "react/jsx-runtime": "./libs/react/react-jsx-runtime.production.min.js",
+    "react-dom": "./libs/react/react-dom.production.min.js"
+  }
+}

@@ -4,13 +4,14 @@
   "description": "rollup starter kit",
   "main": "index.html",
   "scripts": {
-    "build": "npm run clean && npm run rollup && npm run copy",
+    "build": "npm run clean && npm run rollup && npm run copy && npm run rollup-react",
     "clean": "rm -rf dist && mkdir dist",
-    "copy": "cp src/index.html dist/index.html",
+    "copy": "cp src/index.* src/importmap.* dist/",
     "browser-sync": "browser-sync start --config bs-config.js",
     "rollup": "rollup -c rollup.config.js",
     "rollup-watch": "npm run rollup -- --watch",
-    "start": "npm run clean && npm run copy && concurrently \"npm run browser-sync\" \"npm run rollup-watch\"",
+    "rollup-react": "rollup -c rollup/rollup.config.react.js",
+    "start": "npm run clean && npm run copy && npm run rollup-react && concurrently \"npm run browser-sync\" \"npm run rollup-watch\"",
     "test": "test"
   },
   "repository": {
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "eslint": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "@typescript-eslint/parser": "^4.27.0",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "rollup": "^2.51.2",

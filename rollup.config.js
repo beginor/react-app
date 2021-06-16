@@ -18,7 +18,9 @@ export default {
     sourcemap: !production
   },
   treeshake: production,
-  external: [],
+  external: [
+    "react", "react/jsx-runtime", "react-dom"
+  ],
   plugins: [
     typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
     css({ output: 'main.css' }),
