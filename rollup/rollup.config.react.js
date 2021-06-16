@@ -254,7 +254,7 @@ export default [
       replace({
         preventAssignment: true,
         values: {
-          "process.env.NODE_ENV": '"development"'
+          "process.env.NODE_ENV": '"production"'
         }
       }),
       terser({ format: { comments: false } })
