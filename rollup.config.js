@@ -10,6 +10,7 @@ import { terser } from 'rollup-plugin-terser';
 // `npm run dev` -> `production` is false
 const production = !process.env.ROLLUP_WATCH;
 
+/** @type { import('rollup').RollupOptions } */
 export default {
   input: ['./src/main.ts'],
   output: {
@@ -18,8 +19,10 @@ export default {
     format: 'es',
     sourcemap: !production
   },
+  watch: { buildDelay: 500 },
   treeshake: production,
   external: [
+    'tslib', 'bootstrap', '@popperjs/core',
     "react", "react/jsx-runtime", "react-dom", "react-router-dom"
   ],
   plugins: [
