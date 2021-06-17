@@ -1,11 +1,11 @@
 {
   "imports": {
-    "object-assign": "./libs/react/object-assign.js",
-    "scheduler": "./libs/react/scheduler.min.js",
-    "scheduler/tracing": "./libs/react/scheduler-tracing.min.js",
-    "react": "./libs/react/react.min.js",
-    "react/jsx-runtime": "./libs/react/react-jsx-runtime.min.js",
-    "react-dom": "./libs/react/react-dom.min.js",
-    "react-router-dom": "./libs/react/react-router-dom.min.js"
+    "object-assign": "./dist/libs/react/object-assign.js",
+    "scheduler": "./dist/libs/react/scheduler.min.js",
+    "scheduler/tracing": "./dist/libs/react/scheduler-tracing.min.js",
+    "react": "./dist/libs/react/react.min.js",
+    "react/jsx-runtime": "./dist/libs/react/react-jsx-runtime.min.js",
+    "react-dom": "./dist/libs/react/react-dom.min.js",
+    "react-router-dom": "./dist/libs/react/react-router-dom.min.js"
   }
 }
