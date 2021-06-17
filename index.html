@@ -13,7 +13,7 @@
   <script>
   loadScripts([
     { type: 'importmap', src: `./importmap.${isProd()?'prod.json':'json'}` },
-    { type: 'module', src: `./main.js` }
+    { type: 'module', src: './dist/main.js' }
   ]).catch(ex => console.error(ex));
   </script>
 </body>
