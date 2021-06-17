@@ -10,3 +10,5 @@ cp -rv node_modules/bootstrap-icons/icons dist/libs/bootstrap-icons
 cp -rv node_modules/bootstrap/dist dist/libs/bootstrap
 # @popperjs/core
 npx rollup -c rollup/rollup.popperjs.js
+# react
+npx rollup -c rollup/rollup.react.js
