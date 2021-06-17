@@ -5,13 +5,13 @@ import './main.css';
 
 import('./app/app').then(m => {
     const elementId = 'app';
-    const el = document.getElementById(elementId);
-    if (!el) {
-        throw new Error(`HTMLElement with id ${elementId} doesn't exist !`);
+    const container = document.getElementById(elementId);
+    if (!container) {
+        throw new Error(`Element with id ${elementId} doesn't exists !`)
     }
     render(
         createElement(m.App, { message: 'powered by react hooks' }),
-        el
+        container
     );
 }).catch(ex => {
     console.error(ex);

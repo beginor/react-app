@@ -4,15 +4,15 @@
   "description": "rollup starter kit",
   "main": "index.html",
   "scripts": {
-    "build": "npm run clean && npm run rollup && npm run copy && npm run rollup-react",
+    "build": "npm run clean && npm run rollup && npm run copy",
     "clean": "rm -rf dist && mkdir dist",
-    "copy": "cp src/index.* src/importmap.* dist/",
+    "copy": "echo 'copy any assets to dist.'",
     "browser-sync": "browser-sync start --config bs-config.js",
     "rollup": "rollup -c rollup.config.js",
     "rollup-watch": "npm run rollup -- --watch",
     "rollup-react": "rollup -c rollup/rollup.config.react.js",
-    "start": "npm run clean && npm run copy && npm run rollup-react && concurrently \"npm run browser-sync\" \"npm run rollup-watch\"",
-    "test": "test"
+    "start": "npm run clean && npm run copy && concurrently 'npm run browser-sync' 'npm run rollup-watch'",
+    "test": "echo test"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "@typescript-eslint/parser": "^4.27.0",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "rollup": "^2.51.2",
+    "rollup": "^2.52.0",
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
@@ -47,7 +47,7 @@
     "@rollup/plugin-typescript": "^8.2.1",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.3.2",
+    "typescript": "^4.3.3",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.7",
     "@types/react-router-dom": "^5.1.7"
