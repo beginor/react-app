@@ -9,6 +9,7 @@
     "react": "./dist/libs/react/react.min.js",
     "react/jsx-runtime": "./dist/libs/react/react-jsx-runtime.min.js",
     "react-dom": "./dist/libs/react/react-dom.min.js",
-    "react-router-dom": "./dist/libs/react/react-router-dom.min.js"
+    "react-router-dom": "./dist/libs/react/react-router-dom.min.js",
+    "react-is": "./dist/libs/react/react-is.min.js"
   }
 }

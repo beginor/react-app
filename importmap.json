@@ -9,6 +9,7 @@
     "react": "./dist/libs/react/react.js",
     "react/jsx-runtime": "./dist/libs/react/react-jsx-runtime.js",
     "react-dom": "./dist/libs/react/react-dom.js",
-    "react-router-dom": "./dist/libs/react/react-router-dom.js"
+    "react-router-dom": "./dist/libs/react/react-router-dom.js",
+    "react-is": "./dist/libs/react/react-is.js"
   }
 }

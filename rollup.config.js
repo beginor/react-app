@@ -15,7 +15,7 @@ export default {
   input: ['./src/main.ts'],
   output: {
     dir: 'dist',
-    chunkFileNames: production ? "chunks/[name]-[hash].js" : "chunks/[name].js",
+    chunkFileNames: production ? 'chunks/[name]-[hash].js' : 'chunks/[name].js',
     format: 'es',
     sourcemap: !production
   },
@@ -23,7 +23,8 @@ export default {
   treeshake: production,
   external: [
     'tslib', 'bootstrap', '@popperjs/core',
-    "react", "react/jsx-runtime", "react-dom", "react-router-dom"
+    'react', 'react/jsx-runtime', 'react-dom', 'react-router-dom',
+    'react-is'
   ],
   plugins: [
     typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
@@ -36,7 +37,7 @@ export default {
     replace({
       preventAssignment: false,
       values: {
-        "process.env.NODE_ENV": production ? '"development"' : '"production"'
+        'process.env.NODE_ENV': production ? '"development"' : '"production"'
       }
     }),
     production && terser({

@@ -107,7 +107,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react.js'
     },
-    external: ['object-assign'],
+    external: ['react-is','object-assign'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -127,7 +127,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react.min.js'
     },
-    external: ['object-assign'],
+    external: ['react-is','object-assign'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -147,7 +147,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react-jsx-runtime.js'
     },
-    external: ['react', 'object-assign'],
+    external: ['react', 'react-is', 'object-assign'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -167,7 +167,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react-jsx-runtime.min.js'
     },
-    external: ['react', 'object-assign'],
+    external: ['react', 'react-is', 'object-assign'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -187,7 +187,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react-dom.js'
     },
-    external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
+    external: ['react', 'react-is', 'object-assign', 'scheduler', 'scheduler/tracing'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -207,7 +207,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react-dom.min.js'
     },
-    external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
+    external: ['react', 'react-is', 'object-assign', 'scheduler', 'scheduler/tracing'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -227,7 +227,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react-router-dom.js'
     },
-    external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
+    external: ['react', 'react-is', 'object-assign', 'scheduler', 'scheduler/tracing'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -247,7 +247,7 @@ export default [
       sourcemap: false,
       file: 'dist/libs/react/react-router-dom.min.js'
     },
-    external: ['react', 'object-assign', 'scheduler', 'scheduler/tracing'],
+    external: ['react', 'react-is', 'object-assign', 'scheduler', 'scheduler/tracing'],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -258,6 +258,44 @@ export default [
         }
       }),
       terser({ format: { comments: false } })
+    ]
+  },
+  {
+    input: 'node_modules/react-is/cjs/react-is.development.js',
+    output: {
+      format: 'esm',
+      exports: 'named',
+      sourcemap: false,
+      file: 'dist/libs/react/react-is.js'
+    },
+    external: [],
+    plugins: [
+      commonjs(),
+      replace({
+        preventAssignment: false,
+        values: {
+          "process.env.NODE_ENV": '"development"'
+        }
+      })
+    ]
+  },
+  {
+    input: 'node_modules/react-is/cjs/react-is.production.min.js',
+    output: {
+      format: 'esm',
+      exports: 'named',
+      sourcemap: false,
+      file: 'dist/libs/react/react-is.min.js'
+    },
+    external: [],
+    plugins: [
+      commonjs(),
+      replace({
+        preventAssignment: false,
+        values: {
+          "process.env.NODE_ENV": '"production"'
+        }
+      })
     ]
   }
 ]
