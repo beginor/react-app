@@ -12,3 +12,5 @@ cp -rv node_modules/bootstrap/dist dist/libs/bootstrap
 npx rollup -c rollup/rollup.popperjs.js
 # react
 npx rollup -c rollup/rollup.react.js
+# react-bootstrap
+npx rollup -c rollup/rollup.react-bootstrap.js
