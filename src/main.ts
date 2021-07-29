@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import { render } from 'react-dom';
 
-import './main.css';
+import './main.scss';
 
 import('./app/app').then(m => {
     const elementId = 'app';
