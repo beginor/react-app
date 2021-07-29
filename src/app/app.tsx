@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState, lazy, Suspense } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import {
     BrowserRouter as Router, Switch, Route, Link
 } from 'react-router-dom';
@@ -15,7 +15,7 @@ export function App(props: AppProps): JSX.Element {
     }, [])
 
     return (
-      <Fragment>
+      <>
         <h1>Hello, React Hooks!</h1>
         <p>{props.message}</p>
         <p>{`${time.toLocaleDateString()} ${time.toLocaleTimeString()}`}</p>
@@ -56,7 +56,7 @@ export function App(props: AppProps): JSX.Element {
             </Suspense>
           </div>
         </Router>
-      </Fragment>
+      </>
     );
 }
 
