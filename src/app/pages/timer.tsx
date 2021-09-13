@@ -14,8 +14,6 @@ export function Timer(): JSX.Element {
     }, [])
 
     return (
-      <p>
-        {`${time.toLocaleDateString()} ${time.toLocaleTimeString()}`}
-      </p>
+      <p>{`${time.toLocaleDateString()} ${time.toLocaleTimeString()}`}</p>
     );
 }
