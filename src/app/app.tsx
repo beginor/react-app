@@ -1,14 +1,10 @@
-import { lazy, Suspense } from 'react';
-import {
-    HashRouter as Router, Switch, Route, Link
-} from 'react-router-dom';
+import { Suspense } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 
 import Nav from './controls/nav';
 import NavSwitch from './controls/nav-switch';
 
 export function App(props: AppProps): JSX.Element {
-
-
     return (
       <>
         <h1>Hello, React Hooks!</h1>
