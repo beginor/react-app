@@ -21,7 +21,7 @@ export default function NavSwitch(): JSX.Element {
           <Topics />
         </Route>
         <Route path="/todo">
-          <Todo url="dist/todo.json" />
+          <Todo />
         </Route>
         <Route path="/timer">
           <Timer />
