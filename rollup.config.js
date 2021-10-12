@@ -33,10 +33,8 @@ export default [
         outputStyle: !production ? 'expanded' : 'compressed'
       }),
       alias({}),
-      nodeResolve({ mainFields: ['module', 'main'] }),
-      commonjs({
-        include: []
-      }),
+      nodeResolve({}),
+      commonjs({}),
       replace({
         preventAssignment: false,
         values: {
