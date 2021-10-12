@@ -1,7 +1,7 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from "@rollup/plugin-replace";
-import { terser } from 'rollup-plugin-terser';
+import esbuild from 'rollup-plugin-esbuild';
 
 export default [
   {
@@ -16,7 +16,7 @@ export default [
     plugins: [
       nodeResolve({}),
       commonjs({}),
-      terser({ format: { comments: false } })
+      esbuild({ minify: true, legalComments: 'none' })
     ]
   },
   {
@@ -257,7 +257,7 @@ export default [
           "process.env.NODE_ENV": '"production"'
         }
       }),
-      terser({ format: { comments: false } })
+      esbuild({ minify: true, legalComments: 'none' })
     ]
   },
   {
