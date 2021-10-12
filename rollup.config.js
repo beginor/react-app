@@ -4,6 +4,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import scss from 'rollup-plugin-scss';
 import esbuild from 'rollup-plugin-esbuild';
 import replace from '@rollup/plugin-replace';
+import typescript from '@rollup/plugin-typescript';
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -27,7 +28,7 @@ export default [
       'react-is', 'react-bootstrap'
     ],
     plugins: [
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: !!production }),
+      typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
       scss({
         output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
         outputStyle: !production ? 'expanded' : 'compressed'
@@ -40,7 +41,8 @@ export default [
         values: {
           'process.env.NODE_ENV': production ? '"development"' : '"production"'
         }
-      })
+      }),
+      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: !!production })
     ],
     preserveEntrySignatures: false
   }
