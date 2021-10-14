@@ -13,7 +13,7 @@ export default function withLoading<P extends object>(
         useEffect(() => {
             setIsFetching(true);
             void loadData(url)
-                .then(data => setData(data))
+                .then(data => setData(data as never[]))
                 .finally(() => setIsFetching(false));
         }, []);
 
