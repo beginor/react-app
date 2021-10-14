@@ -29,6 +29,7 @@ export default [
     ],
     plugins: [
       typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
+      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production }),
       scss({
         output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
         outputStyle: !production ? 'expanded' : 'compressed'
@@ -41,8 +42,7 @@ export default [
         values: {
           'process.env.NODE_ENV': production ? '"development"' : '"production"'
         }
-      }),
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production })
+      })
     ],
     preserveEntrySignatures: false
   }
