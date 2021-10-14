@@ -20,7 +20,7 @@ export default [
       format: 'es',
       sourcemap: !production
     },
-    watch: { buildDelay: 0 },
+    watch: { clearScreen: false },
     treeshake: production,
     external: [
       'tslib', 'bootstrap', '@popperjs/core',
@@ -42,7 +42,7 @@ export default [
           'process.env.NODE_ENV': production ? '"development"' : '"production"'
         }
       }),
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: !!production })
+      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production })
     ],
     preserveEntrySignatures: false
   }
