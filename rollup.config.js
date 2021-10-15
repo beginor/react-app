@@ -11,39 +11,39 @@ import typescript from '@rollup/plugin-typescript';
 const production = !process.env.ROLLUP_WATCH;
 
 /** @type { import('rollup').RollupOptions } */
-export default [
-  {
-    input: ['./src/main.ts'],
-    output: {
-      dir: 'dist',
-      chunkFileNames: production ? "chunks/[name]-[hash].js" : "chunks/[name].js",
-      format: 'es',
-      sourcemap: !production
-    },
-    watch: { clearScreen: false },
-    treeshake: production,
-    external: [
-      'tslib', 'bootstrap', '@popperjs/core',
-      'react', 'react/jsx-runtime', 'react-dom', 'react-router-dom',
-      'react-is', 'react-bootstrap'
-    ],
-    plugins: [
-      typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
-      esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production }),
-      scss({
-        output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
-        outputStyle: !production ? 'expanded' : 'compressed'
-      }),
-      alias({}),
-      nodeResolve({}),
-      commonjs({}),
-      replace({
-        preventAssignment: false,
-        values: {
-          'process.env.NODE_ENV': production ? '"development"' : '"production"'
-        }
-      })
-    ],
-    preserveEntrySignatures: false
-  }
-]
+export default {
+  input: [
+    './src/main.ts'
+  ],
+  output: {
+    dir: 'dist',
+    chunkFileNames: production ? "chunks/[name]-[hash].js" : "chunks/[name].js",
+    format: 'es',
+    sourcemap: !production
+  },
+  watch: { clearScreen: false },
+  treeshake: production,
+  external: [
+    'tslib', 'bootstrap', '@popperjs/core',
+    'react', 'react/jsx-runtime', 'react-dom', 'react-router-dom',
+    'react-is', 'react-bootstrap'
+  ],
+  plugins: [
+    typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
+    esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: false, legalComments: 'none' }),
+    scss({
+      output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
+      outputStyle: !production ? 'expanded' : 'compressed'
+    }),
+    alias({}),
+    nodeResolve({}),
+    commonjs({}),
+    replace({
+      preventAssignment: false,
+      values: {
+        'process.env.NODE_ENV': production ? '"development"' : '"production"'
+      }
+    })
+  ],
+  preserveEntrySignatures: false
+}
