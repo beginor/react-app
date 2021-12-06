@@ -1,18 +1,15 @@
-import { createElement } from 'react';
+import { StrictMode } from 'react';
 import { render } from 'react-dom';
+import { HashRouter } from 'react-router-dom';
 
 import './main.scss';
+import App from './app/app';
 
-import('./app/app').then(m => {
-    const elementId = 'app';
-    const container = document.getElementById(elementId);
-    if (!container) {
-        throw new Error(`Element with id ${elementId} doesn't exists !`)
-    }
-    render(
-        createElement(m.App, { message: 'powered by react hooks' }),
-        container
-    );
-}).catch(ex => {
-    console.error(ex);
-});
+render(
+    <StrictMode>
+      <HashRouter>
+        <App message="powered by react hooks" />
+      </HashRouter>
+    </StrictMode>,
+    document.getElementById('app')
+);

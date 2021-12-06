@@ -10,10 +10,10 @@ const Users = lazy(() => import('./pages/users'));
 const Todo = lazy(() => import('./pages/todo')); // eslint-disable-line max-len
 const Timer = lazy(() => import('./pages/timer').then(m => ({ default: m.Timer}))); // eslint-disable-line max-len
 
-export default function App(props: AppProps): JSX.Element {
-    return (
+export default function AppRoutes(): JSX.Element {
+    return(
       <Routes>
-        <Route path="/" element={<AppLayout message={props.message} /> }>
+        <Route path="/" element={<AppLayout message="" /> }>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="users" element={<Users />} />
@@ -23,8 +23,4 @@ export default function App(props: AppProps): JSX.Element {
         </Route>
       </Routes>
     );
-}
-
-export interface AppProps {
-    message: string;
 }
