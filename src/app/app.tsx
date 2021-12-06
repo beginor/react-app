@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { HashRouter } from 'react-router-dom';
 
 import Nav from './controls/nav';
-import NavSwitch from './controls/nav-routes';
+import NavRoutes from './controls/nav-routes';
 
 export function App(props: AppProps): JSX.Element {
     return (
@@ -14,7 +14,7 @@ export function App(props: AppProps): JSX.Element {
           <div>
             <Nav />
             <Suspense fallback={<div>Loading page ...</div>}>
-              <NavSwitch />
+              <NavRoutes />
             </Suspense>
           </div>
         </HashRouter>

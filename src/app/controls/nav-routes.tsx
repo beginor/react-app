@@ -8,7 +8,7 @@ const Users = lazy(() => import('../pages/users'));
 const Todo = lazy(() => import('../pages/todo')); // eslint-disable-line max-len
 const Timer = lazy(() => import('../pages/timer').then(m => ({ default: m.Timer}))); // eslint-disable-line max-len
 
-export default function NavSwitch(): JSX.Element {
+export default function NavRoutes(): JSX.Element {
     return(
       <Routes>
         <Route path="about" element={<About />} />
