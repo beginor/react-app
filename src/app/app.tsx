@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import Nav from './controls/nav';
-import NavSwitch from './controls/nav-switch';
+import NavSwitch from './controls/nav-routes';
 
 export function App(props: AppProps): JSX.Element {
     return (
@@ -10,14 +10,14 @@ export function App(props: AppProps): JSX.Element {
         <h1>Hello, React Hooks!</h1>
         <p>{props.message}</p>
         <hr />
-        <Router>
+        <HashRouter>
           <div>
             <Nav />
             <Suspense fallback={<div>Loading page ...</div>}>
               <NavSwitch />
             </Suspense>
           </div>
-        </Router>
+        </HashRouter>
       </>
     );
 }
