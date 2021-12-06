@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 const About = lazy(() => import('../pages/about'));
 const Home = lazy(() => import('../pages/home'));
@@ -10,25 +10,13 @@ const Timer = lazy(() => import('../pages/timer').then(m => ({ default: m.Timer}
 
 export default function NavSwitch(): JSX.Element {
     return(
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/users">
-          <Users />
-        </Route>
-        <Route path="/topics">
-          <Topics />
-        </Route>
-        <Route path="/todo">
-          <Todo />
-        </Route>
-        <Route path="/timer">
-          <Timer />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="about" element={<About />} />
+        <Route path="users" element={<Users />} />
+        <Route path="topics/*" element={<Topics />} />
+        <Route path="todo" element={<Todo />} />
+        <Route path="timer" element={<Timer />} />
+        <Route path="" element={<Home />} />
+      </Routes>
     );
 }
