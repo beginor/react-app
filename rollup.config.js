@@ -6,8 +6,8 @@ import esbuild from 'rollup-plugin-esbuild';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 
-// `npm run build` -> `production` is true
-// `npm run dev` -> `production` is false
+// `pnpm run build` -> `production` is true
+// `pnpm run dev` -> `production` is false
 const production = !process.env.ROLLUP_WATCH;
 
 /** @type { import('rollup').RollupOptions } */
