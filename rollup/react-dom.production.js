@@ -12,6 +12,6 @@ export const {
   unstable_createPortal,
   version
 } = ReactDOM;
-
+export default ReactDOM;
 export const __esmModule = true;
 export const __esModule = true;
