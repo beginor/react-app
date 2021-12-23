@@ -1,28 +1,31 @@
-import { NavLink as Link } from 'react-router-dom';
+import {
+    Navbar, Nav, Container
+} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
-export default function Nav(): JSX.Element {
+import './nav-bar.scss';
+
+export default function NavBar(): JSX.Element {
     return (
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-          <li>
-            <Link to="/timer">Timer</Link>
-          </li>
-          <li>
-            <Link to="/todo">Todo</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar className='app-navbar fixed-top' bg='dark' expand='md' variant='dark'>
+        <Container fluid={true}>
+          <Navbar.Brand href='#/'>
+            <img className='d-inline-block align-text-bottom me-1'
+                 height='20' width='20' src='./react.svg' />
+            React App
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse role='navigation'>
+            <Nav className='me-auto'>
+              <NavLink className='nav-link' to='/'>Home</NavLink>
+              <NavLink className='nav-link' to='/about'>About</NavLink>
+              <NavLink className='nav-link' to='/users'>Users</NavLink>
+              <NavLink className='nav-link' to='/topics'>Topics</NavLink>
+              <NavLink className='nav-link' to='/timer'>Timer</NavLink>
+              <NavLink className='nav-link' to='/todo'>Todo</NavLink>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     );
 }
