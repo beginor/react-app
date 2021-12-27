@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-export function Timer(): JSX.Element {
+
+export default function Timer(): JSX.Element {
 
     const [time, setTime] = useState(new Date());
 
