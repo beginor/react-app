@@ -1,4 +1,4 @@
-import withLoading from '../controls/with-loading';
+import { withLoading } from '../controls';
 
 function Todo(props: TodoProps): JSX.Element {
     return (

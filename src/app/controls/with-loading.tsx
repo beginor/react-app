@@ -1,8 +1,9 @@
 import { useState, useEffect, FunctionComponent, ComponentType } from 'react';
 
 import { loadData } from '../common/load-data';
+import { useApp } from '../controls/app-context';
 
-export default function withLoading<P extends object>(
+export function withLoading<P extends object>(
     Component: ComponentType<P>,
     url: string
 ): FunctionComponent<P> {
@@ -10,10 +11,14 @@ export default function withLoading<P extends object>(
         const [data, setData] = useState([]);
         const [isFetching, setIsFetching] = useState(false);
 
+        // eslint-disable-next-line @typescript-eslint/unbound-method
+        const { addAlert } = useApp();
+
         useEffect(() => {
             setIsFetching(true);
             void loadData(url)
                 .then(data => setData(data as never[]))
+                .catch(ex => addAlert('Can not get todo list!'))
                 .finally(() => setIsFetching(false));
         }, []);
 

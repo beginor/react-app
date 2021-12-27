@@ -1,7 +1,7 @@
 import { FormEvent } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import { useAuth } from '../controls/auth-context';
+import { useAuth } from '../controls';
 
 export default function Login(): JSX.Element {
     const navigate = useNavigate();

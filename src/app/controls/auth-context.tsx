@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from 'react';
-import { useLocation, Navigate } from 'react-router-dom';
 
 import { authProvider } from '../common/auth-provider';
 
@@ -9,13 +8,15 @@ export interface AuthContextType {
     signout: (callback: VoidFunction) => void;
 }
 
-const AuthContext = createContext<AuthContextType>(null!);
+const AuthCtx = createContext<AuthContextType>(null!);
 
 export function useAuth(): AuthContextType {
-    return useContext(AuthContext);
+    return useContext(AuthCtx);
 }
 
-export function AuthProvider({ children }: AuthProviderProps): JSX.Element {
+export function AuthContext(
+    { children }: { children: JSX.Element }
+): JSX.Element {
     const [user, setUser] = useState<string>('');
 
     function signin (newUser: string, callback: VoidFunction): void {
@@ -35,19 +36,8 @@ export function AuthProvider({ children }: AuthProviderProps): JSX.Element {
     const value = { user, signin, signout };
 
     return (
-        <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+        <AuthCtx.Provider value={value}>
+          {children}
+        </AuthCtx.Provider>
     );
-}
-
-export interface AuthProviderProps {
-    children: JSX.Element;
-}
-
-export function RequireAuth({ children }: AuthProviderProps): JSX.Element {
-    const auth = useAuth();
-    const location = useLocation();
-    if (!auth.user) {
-        return (<Navigate to='/login' state={{ from: location }} />);
-    }
-    return children;
 }
