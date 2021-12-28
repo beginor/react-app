@@ -3,9 +3,16 @@ import {
 } from 'react';
 
 export interface AppContextType {
-    alerts: string[];
-    addAlert(alert: string): void;
-    delAlert(alert: string): void;
+    alerts: AlertType[];
+    addAlert(alert: AlertType): void;
+    delAlert(alert: AlertType): void;
+}
+
+export interface AlertType {
+    id?: string;
+    type: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
+        | 'dark' | 'light'
+    message: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -15,20 +22,21 @@ export function AppContext(
     {children}: { children: JSX.Element | JSX.Element[] }
 ): JSX.Element {
 
-    const [alerts, setAlerts] = useState<string[]>([]);
+    const [alerts, setAlerts] = useState<AlertType[]>([]);
 
-    function addAlert(alert: string): void {
-        setAlerts([...alerts, alert]);
+    function addAlert(alert: AlertType): void {
+        alert.id = Date.now().toFixed(1);
+        setAlerts(alerts => [...alerts, alert]);
     }
 
-    function delAlert(alert: string): void {
-        setAlerts(alerts.filter(alt => alt !== alert));
+    function delAlert(alert: AlertType): void {
+        setAlerts(alerts => alerts.filter(alt => alt.id !== alert.id));
     }
 
     const contextVal = {
         alerts,
-        addAlert: useCallback((alert: string) => addAlert(alert), []),
-        delAlert: useCallback((alert: string) => delAlert(alert), [])
+        addAlert: useCallback((alert: AlertType) => addAlert(alert), []),
+        delAlert: useCallback((alert: AlertType) => delAlert(alert), [])
     };
 
     return (

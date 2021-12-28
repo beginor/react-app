@@ -1,7 +1,7 @@
 import { useState, useEffect, FunctionComponent, ComponentType } from 'react';
 
 import { loadData } from '../common/load-data';
-import { useApp } from '../controls/app-context';
+import { useApp } from './app-context';
 
 export function withLoading<P extends object>(
     Component: ComponentType<P>,
@@ -18,7 +18,7 @@ export function withLoading<P extends object>(
             setIsFetching(true);
             void loadData(url)
                 .then(data => setData(data as never[]))
-                .catch(ex => addAlert('Can not get todo list!'))
+                .catch(ex => addAlert({ type: 'warning', message: 'Can not load data!' }))
                 .finally(() => setIsFetching(false));
         }, []);
 
