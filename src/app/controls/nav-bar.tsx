@@ -9,11 +9,11 @@ export function NavBar(): JSX.Element {
     return (
       <Navbar className='app-navbar fixed-top' bg='dark' expand='md' variant='dark'>
         <Container fluid={true}>
-          <Navbar.Brand href='#/'>
+          <NavLink className='navbar-brand' to='/'>
             <img className='d-inline-block align-text-bottom me-1'
                  height='20' width='20' src='./react.svg' />
             React App
-          </Navbar.Brand>
+          </NavLink>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse role='navigation'>
             <Nav className='me-auto'>
