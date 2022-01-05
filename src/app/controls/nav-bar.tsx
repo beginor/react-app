@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import './nav-bar.scss';
 
-export default function NavBar(): JSX.Element {
+export function NavBar(): JSX.Element {
     return (
       <Navbar className='app-navbar fixed-top' bg='dark' expand='md' variant='dark'>
         <Container fluid={true}>

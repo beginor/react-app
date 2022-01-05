@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Nav from './controls/nav-bar';
+import { NavBar } from './controls';
 import { ErrorNotifier } from './controls';
 
 import './app-layout.scss';
@@ -9,7 +9,7 @@ import './app-layout.scss';
 export default function AppLayout(props: AppLayoutProps): JSX.Element {
     return (
       <>
-        <Nav />
+        <NavBar />
         <div className='app-main'>
           <Suspense fallback={<div className='loading-indicator'>加载中 ...</div>}>
             <Outlet  />
