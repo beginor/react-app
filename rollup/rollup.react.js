@@ -220,47 +220,6 @@ export default [
     ]
   },
   {
-    input: './rollup/react-router-dom.js',
-    output: {
-      format: 'esm',
-      exports: 'named',
-      sourcemap: false,
-      file: 'dist/libs/react/react-router-dom.js'
-    },
-    external: ['react', 'react-is', 'object-assign', 'scheduler', 'scheduler/tracing'],
-    plugins: [
-      nodeResolve(),
-      commonjs(),
-      replace({
-        preventAssignment: true,
-        values: {
-          "process.env.NODE_ENV": '"development"'
-        }
-      })
-    ]
-  },
-  {
-    input: './rollup/react-router-dom.js',
-    output: {
-      format: 'esm',
-      exports: 'named',
-      sourcemap: false,
-      file: 'dist/libs/react/react-router-dom.min.js'
-    },
-    external: ['react', 'react-is', 'object-assign', 'scheduler', 'scheduler/tracing'],
-    plugins: [
-      nodeResolve(),
-      commonjs(),
-      replace({
-        preventAssignment: true,
-        values: {
-          "process.env.NODE_ENV": '"production"'
-        }
-      }),
-      esbuild({ minify: true, legalComments: 'none' })
-    ]
-  },
-  {
     input: 'node_modules/react-is/cjs/react-is.development.js',
     output: {
       format: 'esm',
