@@ -1,15 +1,12 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
-import { HashRouter } from 'react-router-dom';
 
 import './main.scss';
-import App from './app/app';
+import App from './app';
 
 render(
     <StrictMode>
-      <HashRouter>
-        <App message="powered by react hooks" />
-      </HashRouter>
+      <App message='Hello, World!' />
     </StrictMode>,
     document.getElementById('app')
 );
