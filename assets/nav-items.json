@@ -1,0 +1,270 @@
+{
+  "id": "1592466881222030189",
+  "url": "/",
+  "title": "GIS Hub",
+  "icon": "bi/app-indicator",
+  "tooltip": null,
+  "children": [
+    {
+      "id": "1592466881482030190",
+      "url": "/home",
+      "title": "首页",
+      "icon": null,
+      "tooltip": null,
+      "children": null,
+      "target": null,
+      "frameUrl": null,
+      "isHidden": false
+    },
+    {
+      "id": "1600821790952030001",
+      "url": "/data",
+      "title": "数据",
+      "icon": null,
+      "tooltip": "数据管理",
+      "children": [
+        {
+          "id": "1649324711402030965",
+          "url": "/data/categories",
+          "title": "数据类别",
+          "icon": "bi/bag-heart",
+          "tooltip": "数据类别管理",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1600823442782030052",
+          "url": "/data/tilemaps",
+          "title": "栅格切片包",
+          "icon": "bi/grid-1x2",
+          "tooltip": "栅格切片包管理",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1616917004100030397",
+          "url": "/data/vectortiles",
+          "title": "矢量切片包",
+          "icon": "bi/grid",
+          "tooltip": "矢量切片包管理",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1600823877761030088",
+          "url": "/data/slpks",
+          "title": "航拍模型",
+          "icon": "bi/box-seam",
+          "tooltip": "航拍模型管理",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1607162761795030733",
+          "url": "/data/datasources",
+          "title": "数据源",
+          "icon": "bi/hdd-network",
+          "tooltip": "数据源管理",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1607162825006030739",
+          "url": "/data/dataservices",
+          "title": "数据服务",
+          "icon": "bi/file-earmark-zip",
+          "tooltip": "数据服务管理",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1636962503036030271",
+          "url": "/data/dataapis",
+          "title": "数据接口",
+          "icon": "bi/braces",
+          "tooltip": "数据接口",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        }
+      ],
+      "target": "",
+      "frameUrl": null,
+      "isHidden": false
+    },
+    {
+      "id": "1592466881694030191",
+      "url": "/admin",
+      "title": "管理",
+      "icon": null,
+      "tooltip": null,
+      "children": [
+        {
+          "id": "1592466882196030193",
+          "url": "/admin/nav-items",
+          "title": "导航菜单",
+          "icon": "bi/compass",
+          "tooltip": null,
+          "children": null,
+          "target": null,
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1592466882490030194",
+          "url": "/admin/users",
+          "title": "用户管理",
+          "icon": "bi/person",
+          "tooltip": null,
+          "children": null,
+          "target": null,
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1592466882670030195",
+          "url": "/admin/roles",
+          "title": "角色管理",
+          "icon": "bi/shield-lock",
+          "tooltip": null,
+          "children": null,
+          "target": null,
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1592466882951030196",
+          "url": "/admin/privileges",
+          "title": "权限管理",
+          "icon": "bi/shield-shaded",
+          "tooltip": null,
+          "children": null,
+          "target": null,
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1630054396304030592",
+          "url": "/admin/storages",
+          "title": "存储管理",
+          "icon": "bi/folder2-open",
+          "tooltip": "存储管理",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1592466883122030197",
+          "url": "/admin/audit-logs",
+          "title": "审计日志",
+          "icon": "bi/list-check",
+          "tooltip": null,
+          "children": null,
+          "target": null,
+          "frameUrl": null,
+          "isHidden": false
+        }
+      ],
+      "target": null,
+      "frameUrl": null,
+      "isHidden": false
+    },
+    {
+      "id": "1592466881874030192",
+      "url": "/about",
+      "title": "关于",
+      "icon": null,
+      "tooltip": null,
+      "children": [
+        {
+          "id": "1616917278620030436",
+          "url": "/about/angular",
+          "title": "Angular",
+          "icon": "bi/link",
+          "tooltip": null,
+          "children": null,
+          "target": "_iframe",
+          "frameUrl": "https://www.angular.io",
+          "isHidden": false
+        },
+        {
+          "id": "1628053478585030332",
+          "url": "/about/baidu",
+          "title": "小东江",
+          "icon": null,
+          "tooltip": null,
+          "children": [
+            {
+              "id": "1628053876559030362",
+              "url": "/about/water1",
+              "title": "综合信息",
+              "icon": null,
+              "tooltip": null,
+              "children": null,
+              "target": "_iframe",
+              "frameUrl": "http://139.196.226.113:9000/xdjly-web/#/home/control",
+              "isHidden": false
+            }
+          ],
+          "target": "_iframe",
+          "frameUrl": "http://139.196.226.113:9000/xdjly-web/",
+          "isHidden": false
+        }
+      ],
+      "target": "",
+      "frameUrl": null,
+      "isHidden": false
+    },
+    {
+      "id": "1632386604145030426",
+      "url": "/account",
+      "title": "用户信息",
+      "icon": "bi/person",
+      "tooltip": "用户信息",
+      "children": [
+        {
+          "id": "1632386689866030442",
+          "url": "/account/info",
+          "title": "我的信息",
+          "icon": "bi/person",
+          "tooltip": "我的信息",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        },
+        {
+          "id": "1632386739705030447",
+          "url": "/account/tokens",
+          "title": "我的凭证",
+          "icon": "bi/key",
+          "tooltip": "我的凭证",
+          "children": null,
+          "target": "",
+          "frameUrl": null,
+          "isHidden": false
+        }
+      ],
+      "target": "",
+      "frameUrl": null,
+      "isHidden": true
+    }
+  ],
+  "target": null,
+  "frameUrl": null,
+  "isHidden": false
+}

@@ -19,6 +19,7 @@ export default function App(props: AppProps): JSX.Element {
               <Route path="about" element={<About />} />
               <Route path="todo" element={<Authorize><Todo /></Authorize>} />
               <Route path='login' element={<Login />} />
+              <Route path='*'  />
             </Route>
           </Routes>
         </AuthContext>
