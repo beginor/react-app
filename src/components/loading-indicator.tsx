@@ -1,7 +1,11 @@
-export function LoadingIndicator(): JSX.Element {
+export function LoadingIndicator(props: LoadingIndicatorProps): JSX.Element {
     return (
       <div className='loading-indicator'>
-        加载中 ...
+        {props.message}
       </div>
     );
+}
+
+export interface LoadingIndicatorProps {
+    message?: string;
 }

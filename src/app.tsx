@@ -9,12 +9,12 @@ const Home = lazy(() => import('./pages/home'));
 const Todo = lazy(() => import('./pages/todo'));
 const Login = lazy(() => import('./pages/login'));
 
-export default function App(props: AppProps): JSX.Element {
+export default function App(): JSX.Element {
     return (
       <AppContext>
         <AuthContext>
           <Routes>
-            <Route path="/" element={<AppLayout message={props.message} /> }>
+            <Route path="/" element={<AppLayout /> }>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="todo" element={<Authorize><Todo /></Authorize>} />
@@ -27,6 +27,3 @@ export default function App(props: AppProps): JSX.Element {
     );
 }
 
-export interface AppProps {
-    message: string;
-}

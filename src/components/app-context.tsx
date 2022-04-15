@@ -10,8 +10,7 @@ export interface AppContextType {
 
 export interface AlertType {
     id?: string;
-    type: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
-        | 'dark' | 'light'
+    type: 'success' | 'info' | 'warning' | 'error';
     message: string;
 }
 

@@ -1,4 +1,4 @@
-import { Alert } from 'react-bootstrap';
+import { Alert } from 'antd';
 
 import { useApp } from './app-context';
 
@@ -9,12 +9,11 @@ export function ErrorNotifier(): JSX.Element {
     const { alerts, delAlert } = useApp();
 
     return (
-      <div className='error-notifier'>
+      <div className='error-notifier my-3'>
         {alerts.map(alt => (
-          <Alert key={alt.id} variant={alt.type} dismissible
-                 onClose={(): void => delAlert(alt)}>
-            {alt.message}
-          </Alert>
+          <Alert key={alt.id} className='mb-3' type={alt.type} closable
+            message={alt.message}
+            onClose={(): void => delAlert(alt)} />
         ))}
       </div>
     )

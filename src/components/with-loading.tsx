@@ -2,6 +2,7 @@ import { useState, useEffect, FunctionComponent, ComponentType } from 'react';
 
 import { loadData } from '../common/load-data';
 import { useApp } from './app-context';
+import { LoadingIndicator } from './loading-indicator';
 
 export function withLoading<P extends object>(
     Component: ComponentType<P>,
@@ -18,15 +19,18 @@ export function withLoading<P extends object>(
             setIsFetching(true);
             void loadData(url)
                 .then(data => setData(data as never[]))
-                .catch(ex => addAlert({ type: 'warning', message: 'Can not load data!' }))
+                .catch(ex => {
+                    addAlert({ type: 'error', message: 'Can not load data!' });
+                    console.error(ex);
+                })
                 .finally(() => setIsFetching(false));
-        }, []);
+        }, [addAlert]);
 
         return (
           <>
             {
               isFetching
-                ? (<span>Loading todo items ...</span>)
+                ? (<LoadingIndicator message='loading data...' />)
                 : (<Component { ...props } data={ data } />)
             }
           </>

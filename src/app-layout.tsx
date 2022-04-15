@@ -10,7 +10,7 @@ import './app-layout.scss';
 
 const { Content } = Layout;
 
-export default function AppLayout(props: AppLayoutProps): JSX.Element {
+export default function AppLayout(): JSX.Element {
     return (
       <Layout className='app-main'>
         <NavTopBar />
@@ -19,7 +19,7 @@ export default function AppLayout(props: AppLayoutProps): JSX.Element {
           <Layout className='px-3 pb-3'>
             <BreadCrumb />
             <Content className='bg-white p-2'>
-              <Suspense fallback={<LoadingIndicator />}>
+              <Suspense fallback={<LoadingIndicator message='loading ...' />}>
                 <Outlet  />
               </Suspense>
             </Content>
@@ -28,8 +28,4 @@ export default function AppLayout(props: AppLayoutProps): JSX.Element {
         </Layout>
       </Layout>
     );
-}
-
-export interface AppLayoutProps {
-    message: string;
 }

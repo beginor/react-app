@@ -9,7 +9,7 @@ const root = createRoot(document.getElementById('app') as HTMLElement);
 root.render(
     <StrictMode>
       <HashRouter>
-        <App message='Hello, World!' />
+        <App />
       </HashRouter>
     </StrictMode>
 );
