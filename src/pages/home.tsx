@@ -4,7 +4,6 @@ export default function Home(): JSX.Element {
     return (
       <>
       <h2>Home</h2>
-      {/* <Calendar /> */}
       <Button className='m-1' type="primary">Primary Button</Button>
       <Button className='m-1' >Default Button</Button>
       <Button className='m-1' type="dashed" >Dashed Button</Button>
