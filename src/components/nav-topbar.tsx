@@ -48,7 +48,7 @@ export function NavTopBar(): JSX.Element {
       <Header className='app-header'>
         <div className='app-logo text-white'>
           <img className='d-inline-block align-text-bottom me-1'
-            height='20' width='20' src='./react.svg' />
+            height='20' width='20' src='assets/react.svg' />
           React App
         </div>
         <Menu theme='dark' mode='horizontal'
