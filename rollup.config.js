@@ -26,7 +26,7 @@ export default {
   external: [
     'tslib', 'bootstrap', '@popperjs/core',
     'react', 'react/jsx-runtime', 'react-dom', 'react-dom/client', 'react-router-dom',
-    'react-is', 'react-bootstrap', 'antd'
+    'react-is', 'antd'
   ],
   plugins: [
     typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
