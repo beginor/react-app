@@ -3,29 +3,31 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 import { Layout, Menu } from 'antd';
 
-import './nav-bar.scss';
+import { MailOutlined, HomeOutlined } from '@ant-design/icons';
+
+import './nav-topbar.scss';
 
 const { Header } = Layout;
 
-export function NavBar(): JSX.Element {
+export function NavTopBar(): JSX.Element {
 
     const location = useLocation();
 
     const [navItems] = useState([
         {
-            "id": "home",
-            "url": "/",
-            "title": "首页",
+            'id': 'home',
+            'url': '/',
+            'title': '首页',
         },
         {
-            "id": "todo",
-            "url": "/todo",
-            "title": "待办",
+            'id': 'todo',
+            'url': '/todo',
+            'title': '待办',
         },
         {
-            "id": "about",
-            "url": "/about",
-            "title": "关于",
+            'id': 'about',
+            'url': '/about',
+            'title': '关于',
         }
     ]);
 
@@ -61,25 +63,3 @@ export function NavBar(): JSX.Element {
       </Header>
     );
 }
-
-// export function NavBar(): JSX.Element {
-//     return (
-//       <Navbar className='app-navbar fixed-top' bg='dark' expand='md' variant='dark'>
-//         <Container fluid={true}>
-//           <NavLink className='navbar-brand' to='/'>
-//             <img className='d-inline-block align-text-bottom me-1'
-//                  height='20' width='20' src='./react.svg' />
-//             React App
-//           </NavLink>
-//           <Navbar.Toggle aria-controls='basic-navbar-nav' />
-//           <Navbar.Collapse role='navigation'>
-//             <Nav className='me-auto'>
-//               <NavLink className='nav-link' to='/'>Home</NavLink>
-//               <NavLink className='nav-link' to='/about'>About</NavLink>
-//               <NavLink className='nav-link' to='/todo'>Todo</NavLink>
-//             </Nav>
-//           </Navbar.Collapse>
-//         </Container>
-//       </Navbar>
-//     );
-// }
