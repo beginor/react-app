@@ -47,7 +47,8 @@
     "react-router-dom": "^6.3.0",
     "react-bootstrap": "^2.4.0",
     "@ant-design/icons": "^4.7.0",
-    "@ant-design/icons-svg": "^4.2.1"
+    "@ant-design/icons-svg": "^4.2.1",
+    "antd": "^4.21.3"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
