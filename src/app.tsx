@@ -1,4 +1,4 @@
-
+import './app.css';
 
 export default function App(props: AppProps): JSX.Element {
     return (
