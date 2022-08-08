@@ -50,7 +50,7 @@
     "react-bootstrap": "^2.5.0",
     "@ant-design/icons": "^4.7.0",
     "@ant-design/icons-svg": "^4.2.1",
-    "antd": "^4.21.3"
+    "antd": "^4.22.3"
   },
   "devDependencies": {
     "eslint": "^8.21.0",
