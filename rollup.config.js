@@ -32,7 +32,7 @@ export default {
     typescript({ tsconfig: 'tsconfig.json', sourceMap: !production }),
     esbuild({ tsconfig: 'tsconfig.json', sourceMap: !production, minify: production, legalComments: 'none' }),
     scss({
-      output: 'dist/main.css', sass: require('sass'), sourceMap: !production,
+      output: 'dist/app.css', sass: require('sass'), sourceMap: !production,
       outputStyle: !production ? 'expanded' : 'compressed'
     }),
     alias({}),

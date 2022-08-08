@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import AppLayout from './app-layout';
 import { AppContext, AuthContext, Authorize } from './components';
 
+import './app.css';
+
 const About = lazy(() => import('./pages/about'));
 const Home = lazy(() => import('./pages/home'));
 const Todo = lazy(() => import('./pages/todo'));
