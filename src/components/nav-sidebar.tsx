@@ -1,6 +1,6 @@
 import { Layout, Menu } from 'antd';
 
-import './nav-sidebar.scss';
+import './nav-sidebar.css';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;

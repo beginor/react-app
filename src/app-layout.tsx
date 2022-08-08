@@ -6,7 +6,7 @@ import {
     NavTopBar, NavSideBar, ErrorNotifier, LoadingIndicator, BreadCrumb
 } from './components';
 
-import './app-layout.scss';
+import './app-layout.css';
 
 const { Content } = Layout;
 

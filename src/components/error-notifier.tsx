@@ -2,7 +2,7 @@ import { Alert } from 'antd';
 
 import { useApp } from './app-context';
 
-import './error-notifier.scss';
+import './error-notifier.css';
 
 export function ErrorNotifier(): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/unbound-method

@@ -5,7 +5,7 @@ import { Layout, Menu } from 'antd';
 
 import { MailOutlined, HomeOutlined } from '@ant-design/icons';
 
-import './nav-topbar.scss';
+import './nav-topbar.css';
 
 const { Header } = Layout;
 
