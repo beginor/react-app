@@ -32,7 +32,7 @@ module.exports = {
       "rules": rules.ts
     },
     {
-      "files": ["*.js"],
+      "files": ["*.js", "*.mjs"],
       "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": "latest"
