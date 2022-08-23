@@ -4,7 +4,7 @@ const production = argv.indexOf('--prod') > -1;
 /** @type {import('esbuild').BuildOptions} */
 const options = {
   entryPoints: [
-    './src/main.ts',
+    './src/main.tsx',
   ],
   tsconfig: './tsconfig.json',
   outdir: 'dist',
@@ -19,6 +19,7 @@ const options = {
     'tslib',
     'bootstrap',
     '@popperjs/core',
+    'react*'
   ]
 };
 
