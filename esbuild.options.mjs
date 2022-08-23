@@ -21,6 +21,7 @@ const options = {
     'bootstrap',
     '@popperjs/core',
     'react*',
+    'antd'
   ]
 };
 
