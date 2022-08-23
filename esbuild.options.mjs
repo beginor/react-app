@@ -21,8 +21,9 @@ const options = {
     'bootstrap',
     '@popperjs/core',
     'react*',
-    'antd'
-  ]
+    'antd',
+  ],
+  plugins:[],
 };
 
 export default options;
