@@ -11,6 +11,7 @@ const options = {
   format: 'esm',
   bundle: true,
   minify: production,
+  sourcemap: !production,
   legalComments: 'none',
   splitting: true,
   chunkNames: "chunks/[name]",
@@ -19,7 +20,7 @@ const options = {
     'tslib',
     'bootstrap',
     '@popperjs/core',
-    'react*'
+    'react*',
   ]
 };
 
