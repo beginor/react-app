@@ -20,7 +20,7 @@ const options = {
     'tslib',
     'bootstrap',
     '@popperjs/core',
-    'react*'
+    'react*',
   ]
 };
 
