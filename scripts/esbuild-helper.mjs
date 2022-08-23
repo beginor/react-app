@@ -26,6 +26,7 @@ function createOptions(entryPoints, output) {
       'tslib',
       'bootstrap',
       '@popperjs/core',
+      'react*',
     ],
     plugins:[],
   };
